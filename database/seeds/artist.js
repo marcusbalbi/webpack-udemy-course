@@ -2,7 +2,7 @@ import _ from 'lodash';
 import faker from 'faker';
 import { GENRES } from '../constants';
 
-module.exports = function() {
+export default function() {
   return {
     _id: _.uniqueId(),
     name: faker.name.findName(),

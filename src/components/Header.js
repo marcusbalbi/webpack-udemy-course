@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-const db = require('../../database/queries/db');
+import db from '../../database/queries/db';
 
 class Header extends Component {
   constructor(props) {
