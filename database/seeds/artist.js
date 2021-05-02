@@ -1,20 +1,20 @@
-import _ from 'lodash';
-import faker from 'faker';
-import { GENRES } from '../constants';
+import _ from "lodash";
+import { name, image, internet, company, datatype, date, lorem } from "faker";
+import { GENRES } from "../constants";
 
-export default function() {
+export default function () {
   return {
     _id: _.uniqueId(),
-    name: faker.name.findName(),
+    name: name.findName(),
     age: randomBetween(15, 45),
     yearsActive: randomBetween(0, 15),
-    image: faker.image.avatar(),
+    image: image.avatar(),
     genre: getGenre(),
-    website: faker.internet.url(),
+    website: internet.url(),
     netWorth: randomBetween(0, 5000000),
-    labelName: faker.company.companyName(),
-    retired: faker.random.boolean(),
-    albums: getAlbums()
+    labelName: company.companyName(),
+    retired: datatype.boolean(),
+    albums: getAlbums(),
   };
 }
 
@@ -23,21 +23,21 @@ function getAlbums() {
     const copiesSold = randomBetween(0, 1000000);
 
     return {
-      title: _.capitalize(faker.random.words()),
-      date: faker.date.past(),
+      title: _.capitalize(lorem.words()),
+      date: date.past(),
       copiesSold,
       numberTracks: randomBetween(1, 20),
       image: getAlbumImage(),
-      revenue: copiesSold * 12.99
+      revenue: copiesSold * 12.99,
     };
   });
 }
 
 function getAlbumImage() {
-  const types = _.keys(faker.image);
-  const method = randomEntry(types);
-
-  return faker.image[method]();
+  const types = _.keys(image);
+  let method = randomEntry(types);
+  method = typeof method === "function" ? method : "image";
+  return image[method]();
 }
 
 function getGenre() {
@@ -49,5 +49,5 @@ function randomEntry(array) {
 }
 
 function randomBetween(min, max) {
-  return ~~(Math.random() * (max-min)) + min;
+  return ~~(Math.random() * (max - min)) + min;
 }
