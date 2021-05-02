@@ -1,13 +1,20 @@
 var webpack = require("webpack");
 var path = require("path");
+const packageJson = require("./package.json");
+
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const VENDOR_LIBS = Object.keys(packageJson.dependencies);
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: {
+    bundle: "./src/index.js",
+    vendor: VENDOR_LIBS,
+  },
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: "[name].js",
   },
   module: {
     rules: [
@@ -15,7 +22,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: "babel-loader",
         },
       },
       {
