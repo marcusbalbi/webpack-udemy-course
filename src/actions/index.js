@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import { hashHistory } from 'react-router';
-
 import {
   SET_AGE_RANGE,
   SET_YEARS_ACTIVE_RANGE,

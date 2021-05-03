@@ -25,7 +25,7 @@ jobs:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_BALBI_WEBPACK_COURSE }}"
           entryPoint: "./"
-          channelId: "container"
+          channelId: "actions"
           projectId: balbi-webpack-course
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
