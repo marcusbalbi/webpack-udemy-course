@@ -14,6 +14,7 @@ import {
   RESET_SELECTION
 } from './types';
 
+
 import GetAgeRange from '../../database/queries/GetAgeRange';
 import GetYearsActiveRange from '../../database/queries/GetYearsActiveRange';
 import SearchArtists from '../../database/queries/SearchArtists';
