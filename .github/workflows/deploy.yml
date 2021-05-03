@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - '*'
+      - "*"
 
 defaults:
   run:
@@ -22,10 +22,10 @@ jobs:
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BALBI_WEBPACK_COURSE. }}'
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_BALBI_WEBPACK_COURSE. }}"
           entryPoint: "./"
-          channelId: 'container'
+          channelId: "container"
           projectId: balbi-webpack-course
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
