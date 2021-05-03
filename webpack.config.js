@@ -8,6 +8,9 @@ module.exports = {
   entry: {
     bundle: "./src/index.js",
   },
+  devServer: {
+    port: 8000,
+  },
   output: {
     path: path.join(__dirname, "dist"),
     filename: "[name].[chunkhash].js",
